@@ -1,7 +1,7 @@
 Documentation of Copyrighted Materials: 
 -
 All 10 pictures of website logos (privilege goes to each website).
-Home page picture (privilege goes to Canva Education).
+/n Home page picture (privilege goes to Canva Education).
 
 
 Home Page
