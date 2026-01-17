@@ -2,7 +2,13 @@
 this page of css is for the main frame of the website
 for example, the navigation bar's css can be found here
 */
+.view {
+  display: none;
+}
 
+.view.active {
+  display: block;
+}
 #calculator-gpa, /*If this was not here, then there would be a weird glitch every time the website reloaded*/
 #section4  {
     display: none;
