@@ -19,18 +19,6 @@ function showCalculator() {
 }
 
 
-
-
-// Create buttons dynamically and add event listeners
-
-var button1 = document.createElement('button');
-button1.className = 'button';
-button1.textContent = 'GPA Calculator';
-button1.onclick = showCalculator;
-
-
-document.getElementById('buttonContainer').appendChild(button1);
-
 window.addEventListener("DOMContentLoaded", () => {
     showSection(
         "calculator-gpa",
