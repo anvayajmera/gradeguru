@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <!-- Title -->
     <title>Grade Guru</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,22 +21,32 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <!-- FORCE HOME TO NEVER APPEAR -->
+    <style>
+        #section1 {
+            display: none !important;
+        }
+        #buttonContainer {
+            display: none !important;
+        }
+    </style>
 </head>
 
-<body>
+<body onload="showSection('calculator-gpa', 'GPA Calculator', 'Calculate your weighted and unweighted GPA.')">
 
-<!-- NAVBAR (ONLY GPA CALCULATOR + LOGIN) -->
+<!-- NAVBAR (LOGIN FIRST, GPA SECOND) -->
 <div class="navbar">
     <img src="images/FBLALOGO.png" alt="Grade Guru Logo" class="navbar-image">
-
-    <a href="#/gpa-calculator"
-       onclick="showSection('calculator-gpa', 'GPA Calculator', 'Calculate your weighted and unweighted GPA.')">
-        GPA Calculator
-    </a>
 
     <a href="#/log-in"
        onclick="showSection('section4', 'Log In', 'Log in to save calculated grades.')">
         Log In
+    </a>
+
+    <a href="#/gpa-calculator"
+       onclick="showSection('calculator-gpa', 'GPA Calculator', 'Calculate your weighted and unweighted GPA.')">
+        GPA Calculator
     </a>
 </div>
 
@@ -51,7 +60,6 @@
 <!-- GPA CALCULATOR -->
 <div id="outsideColorGPAHelper">
 <div class="content calculator-section" id="calculator-gpa">
-
   <div class="cumulative-gpa" id="gpa-container">
     Overall Unweighted GPA: <span id="unweighted-gpa"></span><br>
     Overall Weighted GPA: <span id="gpa"></span><br>
@@ -59,7 +67,6 @@
 
   <div class="enter-info-section">
   <p id="title-for-entering-info">Enter Class Details</p>
-
   <form id="gpa-form">
 
     <div class="form-row">
@@ -140,7 +147,6 @@
     </thead>
     <tbody></tbody>
   </table>
-
 </div>
 </div>
 
