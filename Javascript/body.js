@@ -29,10 +29,6 @@ function showSection(sectionId, title, subtitle) {
 function showCalculator() {
   showSection('calculator-gpa', 'GPA Calculator', 'Effortlessly calculate your GPA. \n To get started, enter your class information, and click "Add Class" to add it to the table.');
 }
-<body onload="showSection('calculator-gpa', 'GPA Calculator', 'Calculate your weighted and unweighted GPA.')">
-
-
-
 
 
 
