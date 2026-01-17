@@ -1,54 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <title>Grade Guru</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="CSS/body.css"> 
-    <link rel="stylesheet" type="text/css" href="CSS/resources.css"> 
-    <link rel="stylesheet" type="text/css" href="CSS/faq.css"> 
-    <link rel="stylesheet" type="text/css" href="CSS/gpaCalculator.css"> 
-    <link rel="stylesheet" type="text/css" href="CSS/logIn.css"> 
-
+    <link rel="stylesheet" type="text/css" href="CSS/body.css">
+    <link rel="stylesheet" type="text/css" href="CSS/resources.css">
+    <link rel="stylesheet" type="text/css" href="CSS/faq.css">
+    <link rel="stylesheet" type="text/css" href="CSS/gpaCalculator.css">
+    <link rel="stylesheet" type="text/css" href="CSS/logIn.css">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap" rel="stylesheet">
-
     <!-- PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.10/jspdf.plugin.autotable.min.js"></script>
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-
-   
 </head>
-
 <body onload="showSection('calculator-gpa', 'GPA Calculator', 'Calculate your weighted and unweighted GPA.')">
-
 <!-- NAVBAR (LOGIN FIRST, GPA SECOND) -->
 <div class="navbar">
     <img src="images/FBLALOGO.png" alt="Grade Guru Logo" class="navbar-image">
-
     <a href="#/log-in"
        onclick="showSection('section4', 'Log In', 'Log in to save calculated grades.')">
         Log In
     </a>
-
     <a href="#/gpa-calculator"
        onclick="showSection('calculator-gpa', 'GPA Calculator', 'Calculate your weighted and unweighted GPA.')">
         GPA Calculator
     </a>
 </div>
-
 <!-- HEADER -->
 <div class="header">
     <h1 id="headerTitle">GPA Calculator</h1>
     <p id="contentText">Calculate your weighted and unweighted GPA.</p>
     <div id="buttonContainer"></div>
 </div>
-
 <!-- GPA CALCULATOR -->
 <div id="outsideColorGPAHelper">
 <div class="content calculator-section" id="calculator-gpa">
@@ -56,18 +43,15 @@
     Overall Unweighted GPA: <span id="unweighted-gpa"></span><br>
     Overall Weighted GPA: <span id="gpa"></span><br>
   </div>
-
   <div class="enter-info-section">
   <p id="title-for-entering-info">Enter Class Details</p>
   <form id="gpa-form">
-
     <div class="form-row">
-      <label>Class Name:</label>
+      <label for="class-name">Class Name:</label>
       <input type="text" id="class-name" placeholder="e.g. Math" spellcheck="false">
     </div>
-
     <div class="form-row">
-      <label>Letter Grade:</label>
+      <label for="grade">Letter Grade:</label>
       <select id="grade">
         <option value="4.33">A+</option>
         <option value="4.00">A</option>
@@ -84,9 +68,8 @@
         <option value="0.00">U</option>
       </select>
     </div>
-
     <div class="form-row">
-      <label>Credits:</label>
+      <label for="credits">Credits:</label>
       <select id="credits">
         <option value="5">5</option>
         <option value="4.5">4.5</option>
@@ -100,60 +83,47 @@
         <option value="0.5">0.5</option>
       </select>
     </div>
-
     <div class="form-row">
-      <label>Class Type:</label>
+      <label for="class-type">Class Type:</label>
       <select id="class-type">
         <option value="Regular">Regular</option>
         <option value="Honors">Honors</option>
         <option value="AP">AP</option>
       </select>
     </div>
-
     <div class="calculator-buttons">
       <button type="submit" id="add-class">Add Class</button>
-      <button id="add-mp">Add Marking Period</button>
+      <button type="button" id="add-mp">Add Marking Period</button>
       <button type="button" id="delete">Delete All</button>
       <br>
       <button type="button" id="save-data">Save Current Data</button>
     </div>
-
   </form>
   </div>
-
   <div id="semesters">
     <p class="add-mp-text">Marking Period 1</p>
   </div>
-
+  <div style="overflow-x: auto;">
   <table id="classes">
     <thead>
       <tr>
-        <th>Class Name</th>
-        <th>Letter Grade</th>
-        <th>Credits</th>
-        <th>Course Type</th>
-        <th>Grade GPA</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th scope="col">Class Name</th>
+        <th scope="col">Letter Grade</th>
+        <th scope="col">Credits</th>
+        <th scope="col">Course Type</th>
+        <th scope="col">Grade GPA</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
+  </div>
 </div>
 </div>
-
-
-
-
-
-
     <!--Content Section for Numerical Grade calculator -->
-
+  
    
-
-
-
-    
     <div class="content section4" id="section4">
       <!-- Content for LOG IN goes here -->
       <!-- Backend is merged with GPA Calculator JS, as both use similar variables in certain cases.-->
@@ -161,38 +131,37 @@
         <h1>Log In to Grade Guru</h1>
         <form method="post" onsubmit="login(event)">
           <!-- this "method" helps in moving information to a server (that is why "post" is there) -->
-    
+   
           <div class="textField">
             <input type="text" id="loginUsername" required>
             <!-- required is built-in -->
             <span></span>
-            <label>Username</label>
+            <label for="loginUsername">Username</label>
           </div>
-    
+   
           <div class="textField">
             <input type="password" id="loginPassword" required>
             <!-- required is built-in -->
             <span></span>
-            <label>Password</label>
+            <label for="loginPassword">Password</label>
           </div>
-    
+   
           <input type="submit" value="Log In">
           <div class="signupLink">
             <a href="#" onclick="toggleSection()">Need an account? Make one here.</a>
           </div>
         </form>
       </div>
-
-      <div class = "centerAfterLogin">
+      <div class="centerAfterLogin">
         <h2 id="loginWelcomeTitle">Welcome.</h2>
         <h3 id="loginDisplayTitle"></h3>
-        <button id="refreshButton">Refresh Page</button>
-        <button id="deleteDataButton">Delete All Data</button>
-        <button id="logoutButton">Log Out</button>
+        <button type="button" id="refreshButton">Refresh Page</button>
+        <button type="button" id="deleteDataButton">Delete All Data</button>
+        <button type="button" id="logoutButton">Log Out</button>
         <p id="logoutText"></p>
         <p id="infoForLogin"></p>
       </div>
-    
+   
       <!-- Content for CREATE ACCOUNT goes here -->
       <div class="center hidden" id="createAccountSection">
         <h1>Create Account</h1>
@@ -203,46 +172,28 @@
             <input type="text" id="newUsername" required>
             <!-- required is built-in -->
             <span></span>
-            <label>New Username</label>
+            <label for="newUsername">New Username</label>
           </div>
-    
+   
           <div class="textField">
             <input type="password" id="newPassword" required>
             <!-- required is built-in -->
             <span></span>
-            <label>New Password</label>
+            <label for="newPassword">New Password</label>
           </div>
-
           <div class="textField_createAccount">
             <input type="password" id="confirmPassword" required>
             <!-- required is built-in -->
             <span></span>
-            <label>Confirm New Password</label>
+            <label for="confirmPassword">Confirm New Password</label>
           </div>
-
           <p id="errorMessage" class="error-message"></p>
-
           <input type="submit" value="Create">
         </form>
       </div>
-      </div>
     </div>
-
-
-    <script defer src="Javascript/body.js"></script> <!-- !--Referencing to the javascript file website.js. (has to be at the end)-->
+    <script defer src="Javascript/body.js"></script> <!-- Referencing to the javascript file website.js. (has to be at the end)-->
     <script defer src="Javascript/gpaCalculator.js"></script>
     <script type="module" defer src="Javascript/faq.js"></script>
 </body>
 </html>
-
-<!-- 
-  TIPS FOR NATS:
-  Clear class values
-  Close button after clicking on gpa calc (back to home)
-  Once logged in, turn Log in button to Log out (display user).
-  Make the Class Name Alphanumeric (data validation)
-  Add a save as PDF button
-  Make the Saved Data Boxes bigger
-  make multiple mp save
-  Find a free database to save all the Login data
--->
