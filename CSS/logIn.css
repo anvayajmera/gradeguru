@@ -1,6 +1,5 @@
-/* logIn.css - Refactored and fixed for responsiveness across all devices */
+/* logIn.css - Updated for full responsiveness while preserving original styling assumptions */
 
-/* General reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,207 +11,212 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* Content section */
 .content.section4 {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 800px;
-    width: 100%;
+    flex-grow: 1;
 }
 
-/* Center classes */
 .center, .centerAfterLogin, #createAccountSection {
     background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 1rem 0;
 }
 
 .center h1, #createAccountSection h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #222;
 }
 
 .centerAfterLogin h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .centerAfterLogin h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .centerAfterLogin button {
-    display: block;
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #007bff;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .centerAfterLogin button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 
 .centerAfterLogin p {
-    margin-top: 10px;
-    font-size: 14px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
 
-/* Hidden class */
 .hidden {
     display: none;
 }
 
-/* Form styles */
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
 }
 
 .textField, .textField_createAccount {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 1.5rem;
     width: 100%;
 }
 
 .textField input, .textField_createAccount input {
     width: 100%;
-    padding: 10px;
-    background: transparent;
+    padding: 0.75rem 0.5rem;
     border: none;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #ddd;
+    background: transparent;
     outline: none;
-    font-size: 16px;
-    transition: border-color 0.3s;
+    font-size: 1rem;
+    transition: border-bottom 0.3s;
 }
 
 .textField input:focus, .textField_createAccount input:focus {
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #4CAF50;
 }
 
 .textField label, .textField_createAccount label {
     position: absolute;
-    top: 10px;
-    left: 0;
+    top: 0.75rem;
+    left: 0.5rem;
     color: #aaa;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     pointer-events: none;
 }
 
-.textField input:focus + label,
-.textField input:not(:placeholder-shown) + label,
-.textField_createAccount input:focus + label,
-.textField_createAccount input:not(:placeholder-shown) + label {
-    top: -20px;
-    font-size: 12px;
-    color: #007bff;
+.textField input:focus ~ label,
+.textField input:not(:placeholder-shown) ~ label,
+.textField_createAccount input:focus ~ label,
+.textField_createAccount input:not(:placeholder-shown) ~ label {
+    top: -1rem;
+    left: 0;
+    font-size: 0.8rem;
+    color: #4CAF50;
 }
 
 .textField span, .textField_createAccount span {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
-    background: #007bff;
-    transform: scaleX(0);
-    transition: transform 0.3s;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
 }
 
 .textField input:focus ~ span, .textField_createAccount input:focus ~ span {
-    transform: scaleX(1);
+    width: 100%;
 }
 
 input[type="submit"] {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 0.75rem;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 
-/* Signup link */
 .signupLink {
-    margin-top: 20px;
-    font-size: 14px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
 }
 
 .signupLink a {
-    color: #007bff;
+    color: #4CAF50;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .signupLink a:hover {
-    color: #0056b3;
+    color: #45a049;
 }
 
-/* Error message */
 .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
+    color: #f44336;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: left;
 }
 
-/* Responsive design */
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
     .center, .centerAfterLogin, #createAccountSection {
-        padding: 20px;
+        padding: 1.5rem;
         max-width: 90%;
     }
 
     h1, h2 {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
 
     input, button {
-        font-size: 14px;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
     .content.section4 {
         padding: 10px;
-        margin: 10px;
     }
 
     .center, .centerAfterLogin, #createAccountSection {
-        padding: 15px;
+        padding: 1rem;
     }
 
     input[type="submit"] {
-        padding: 8px;
+        padding: 0.6rem;
+    }
+
+    .textField label, .textField_createAccount label {
+        font-size: 0.9rem;
+    }
+
+    .textField input:focus ~ label,
+    .textField input:not(:placeholder-shown) ~ label,
+    .textField_createAccount input:focus ~ label,
+    .textField_createAccount input:not(:placeholder-shown) ~ label {
+        font-size: 0.7rem;
     }
 }
