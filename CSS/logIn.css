@@ -26,6 +26,7 @@ html, body {
   justify-content: center;
   align-items: center;
   padding: 200px;
+  padding-top: 50px; /* Adjust only the top padding */
   box-sizing: border-box;
 }
 
