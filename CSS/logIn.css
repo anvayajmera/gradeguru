@@ -10,7 +10,12 @@ Fixed issues:
 - Kept your exact shadows, border styles, animations, and colors
 - Line count significantly increased with proper overrides, comments, and granular breakpoints
 */
-
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0a2e7f; /* Forces full blue coverage */
+}
 .section4 {
   background-color: #0a2e7f;
   min-height: 100vh; /* Full viewport height on all devices */
