@@ -12,9 +12,6 @@ function showSection(sectionId, headerText, contentText) {
 }
 
 // Function to set the default section when the page loads
-function setDefaultSection() {
-  showSection('section1', 'Home', 'Welcome to Grade Guru! Explore a multitude of features.');
-}
 
 // Function to show the GPA calculator section
 function showCalculator() {
@@ -23,9 +20,6 @@ function showCalculator() {
 
 
 
-
-
-window.onload = setDefaultSection; //when website is loaded, shows the Home page
 
 // Create buttons dynamically and add event listeners
 
@@ -37,7 +31,13 @@ button1.onclick = showCalculator;
 
 document.getElementById('buttonContainer').appendChild(button1);
 
-
+window.addEventListener("DOMContentLoaded", () => {
+    showSection(
+        "calculator-gpa",
+        "GPA Calculator",
+        "Calculate your weighted and unweighted GPA."
+    );
+});
 
 
 
