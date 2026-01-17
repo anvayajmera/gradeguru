@@ -18,7 +18,7 @@ html, body {
 }
 .section4 {
   background-color: #0a2e7f;
-  min-height: 100vh; /* Full viewport height on all devices */
+  min-height: calc(100vh - var(--header-height, 0px)); /* Avoid extra scroll below the login content */
   background-size: cover;
   position: relative; /* Needed for absolute children */
   display: flex;
@@ -27,6 +27,14 @@ html, body {
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.section4.view {
+  display: none;
+}
+
+.section4.view.active {
+  display: flex;
 }
 
 /* Main login/create account box - desktop styling (your original) */
